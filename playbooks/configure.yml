@@ -25,6 +25,10 @@
       prompt: "Would you like to install Ruby?"
       default: "yes"
       private: no
+    - name: js_homebrewpackage_rust_enabled
+      prompt: "Would you like to install Rust?"
+      default: "yes"
+      private: no
     - name: js_homebrewpackage_elixir_enabled
       prompt: "Would you like to install Elixir?"
       default: "yes"

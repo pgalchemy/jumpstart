@@ -1,0 +1,8 @@
+---
+- name: Installing Rust up
+  homebrew:
+    name: rustup
+
+- name: Installing Rust
+  homebrew:
+    name: rust
