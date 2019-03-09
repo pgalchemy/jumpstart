@@ -4,6 +4,7 @@ js_homebrewpackage_zsh_enabled: True
 js_homebrewpackage_zshtheme_spaceship_enabled: True
 js_homebrewpackage_python_enabled: True
 js_homebrewpackage_ruby_enabled: True
+js_homebrewpackage_rust_enabled: True
 js_homebrewpackage_elixir_enabled: True
 js_homebrewpackage_golang_enabled: True
 js_homebrewpackage_git_enabled: True
