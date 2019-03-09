@@ -21,6 +21,10 @@
       prompt: "Would you like to install Python?"
       default: "yes"
       private: no
+    - name: js_homebrewpackage_ruby_enabled
+      prompt: "Would you like to install Ruby?"
+      default: "yes"
+      private: no
     - name: js_homebrewpackage_git_enabled
       prompt: "Would you like to install Git?"
       default: "yes"
@@ -41,32 +45,12 @@
       prompt: "Would you like to install iTerm2?"
       default: "yes"
       private: no
-    - name: js_homebrewcask_sublimetext3_enabled
-      prompt: "Would you like to install Sublime Text 3?"
-      default: "yes"
-      private: no
-    - name: js_homebrewcask_atom_enabled
-      prompt: "Would you like to install Atom?"
-      default: "yes"
-      private: no
     - name: js_homebrewcask_visualstudiocode_enabled
       prompt: "Would you like to install Visual Studio Code?"
       default: "yes"
       private: no
-    - name: js_homebrewcask_gpgsuite_enabled
-      prompt: "Would you like to install GPG Suite?"
-      default: "yes"
-      private: no
     - name: js_homebrewcask_slack_enabled
       prompt: "Would you like to install Slack?"
-      default: "yes"
-      private: no
-    - name: js_homebrewcask_discord_enabled
-      prompt: "Would you like to install Discord?"
-      default: "yes"
-      private: no
-    - name: js_homebrewcask_mactex_enabled
-      prompt: "Would you like to install MacTex?"
       default: "yes"
       private: no
     - name: js_homebrewcask_docker_enabled
@@ -93,6 +77,10 @@
         line: "js_homebrewpackage_python_enabled: {{ js_homebrewpackage_python_enabled|bool }}"
     - lineinfile:
         path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewpackage_ruby_enabled: (?:True|False)$"
+        line: "js_homebrewpackage_ruby_enabled: {{ js_homebrewpackage_ruby_enabled|bool }}"
+    - lineinfile:
+        path: "../global_vars/vars.yml"
         regexp: "^js_homebrewpackage_git_enabled: (?:True|False)$"
         line: "js_homebrewpackage_git_enabled: {{ js_homebrewpackage_git_enabled|bool }}"
     - lineinfile:
@@ -109,32 +97,12 @@
         line: "js_homebrewcask_iterm2_enabled: {{ js_homebrewcask_iterm2_enabled|bool }}"
     - lineinfile:
         path: "../global_vars/vars.yml"
-        regexp: "^js_homebrewcask_sublimetext3_enabled: (?:True|False)$"
-        line: "js_homebrewcask_sublimetext3_enabled: {{ js_homebrewcask_sublimetext3_enabled|bool }}"
-    - lineinfile:
-        path: "../global_vars/vars.yml"
-        regexp: "^js_homebrewcask_atom_enabled: (?:True|False)$"
-        line: "js_homebrewcask_atom_enabled: {{ js_homebrewcask_atom_enabled|bool }}"
-    - lineinfile:
-        path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_visualstudiocode_enabled: (?:True|False)$"
         line: "js_homebrewcask_visualstudiocode_enabled: {{ js_homebrewcask_visualstudiocode_enabled|bool }}"
     - lineinfile:
         path: "../global_vars/vars.yml"
-        regexp: "^js_homebrewcask_gpgsuite_enabled: (?:True|False)$"
-        line: "js_homebrewcask_gpgsuite_enabled: {{ js_homebrewcask_gpgsuite_enabled|bool }}"
-    - lineinfile:
-        path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_slack_enabled: (?:True|False)$"
         line: "js_homebrewcask_slack_enabled: {{ js_homebrewcask_slack_enabled|bool }}"
-    - lineinfile:
-        path: "../global_vars/vars.yml"
-        regexp: "^js_homebrewcask_discord_enabled: (?:True|False)$"
-        line: "js_homebrewcask_discord_enabled: {{ js_homebrewcask_discord_enabled|bool }}"
-    - lineinfile:
-        path: "../global_vars/vars.yml"
-        regexp: "^js_homebrewcask_mactex_enabled: (?:True|False)$"
-        line: "js_homebrewcask_mactex_enabled: {{ js_homebrewcask_mactex_enabled|bool }}"  
     - lineinfile:
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_docker_enabled: (?:True|False)$"

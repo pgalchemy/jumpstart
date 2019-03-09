@@ -1,0 +1,26 @@
+---
+- name: Installing Ruby
+  homebrew:
+    name: ruby
+
+- name: Installing rbenv
+  homebrew:
+    name: rbenv
+
+- lineinfile: 
+    path: "~/.bash_profile"
+    regexp: "^eval \"$(rbenv init -)\""
+    create: yes
+    line: "eval \"$(rbenv init -)\""
+
+- name: Check if zsh is installed
+  stat:
+    path: ~/.zshrc
+  register: zsh_installed
+
+- lineinfile: 
+    path: "~/.zshrc"
+    regexp: "^eval \"$(rbenv init -)\""
+    create: yes
+    line: "eval \"$(rbenv init -)\""
+  when: zsh_installed.stat.exists == True

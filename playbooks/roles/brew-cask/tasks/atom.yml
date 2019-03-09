@@ -1,6 +1,0 @@
----
-- name: Install Atom through Homebrew
-  homebrew_cask:
-    name: atom
-    install_options: 'appdir=/Applications'
-  

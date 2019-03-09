@@ -1,9 +1,4 @@
 ---
-- name: Installing Java 9
+- name: Installing Java
   homebrew_cask:
     name: java
-
-# - name: Installing Java 8
-#   homebrew_cask:
-#     name: homebrew/cask-versions/java8
-

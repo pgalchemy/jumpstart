@@ -1,4 +1,0 @@
----
-- name: Install MacTex through Homebrew
-  homebrew_cask:
-    name: mactex

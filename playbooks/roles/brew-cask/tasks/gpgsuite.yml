@@ -1,5 +1,0 @@
----
-- name: Install GPG Suite through Homebrew
-  homebrew_cask:
-    name: gpg-suite
-  
