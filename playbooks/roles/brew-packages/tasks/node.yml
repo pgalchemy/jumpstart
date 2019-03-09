@@ -15,10 +15,6 @@
   homebrew:
     name: watchman
 
-- name: Installing Chrome driver
-  homebrew:
-    name: chromedriver
-
 - name: Installing nvm
   homebrew:
     name: nvm
