@@ -1,0 +1,6 @@
+---
+- name: Install Sketch through Homebrew
+  homebrew_cask:
+    name: sketch
+    install_options: 'appdir=/Applications'
+  

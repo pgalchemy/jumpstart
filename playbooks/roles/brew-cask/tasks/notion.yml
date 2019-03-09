@@ -1,0 +1,4 @@
+---
+- name: Installing Notion
+  homebrew_cask:
+    name: notion

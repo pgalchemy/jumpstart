@@ -1,0 +1,8 @@
+---
+- name: Installing Erlang
+  homebrew:
+    name: erlang
+
+- name: Installing Elixir
+  homebrew:
+    name: elixir

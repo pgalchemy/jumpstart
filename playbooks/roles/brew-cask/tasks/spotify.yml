@@ -1,0 +1,5 @@
+---
+- name: Install Spotify through Homebrew
+  homebrew_cask:
+    name: spotify
+    install_options: 'appdir=/Applications'

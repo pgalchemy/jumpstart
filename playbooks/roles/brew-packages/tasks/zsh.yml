@@ -4,6 +4,38 @@
   homebrew:
     name: zsh
 
+- name: Installing zsh completions
+  homebrew:
+    name: zsh-completions
+
+- name: Installing tmux
+  homebrew:
+    name: tmux
+
+- name: Installing readline
+  homebrew:
+    name: readline
+
+- name: Installing xz
+  homebrew:
+    name: xz
+
+- name: Installing fzf
+  homebrew:
+    name: fzf
+
+- name: Installing ack
+  homebrew:
+    name: ack
+
+- name: Installing tree
+  homebrew:
+    name: tree
+
+- name: Installing vim
+  homebrew:
+    name: vim
+
 - name: Cloning oh-my-zsh repository
   git: 
     repo: https://github.com/robbyrussell/oh-my-zsh.git 

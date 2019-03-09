@@ -1,0 +1,4 @@
+---
+- name: Installing Terraform
+  homebrew:
+    name: terraform

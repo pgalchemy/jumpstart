@@ -1,4 +1,55 @@
 ---
-- name: Installing Node
+- name: Installing Node 8
+  homebrew:
+    name: node@8
+
+- name: Installing Node 11
   homebrew:
     name: node
+
+- name: Installing Yarn
+  homebrew:
+    name: yarn
+
+- name: Installing watchman
+  homebrew:
+    name: watchman
+
+- name: Installing Chrome driver
+  homebrew:
+    name: chromedriver
+
+- name: Installing nvm
+  homebrew:
+    name: nvm
+
+- lineinfile: 
+    path: "~/.bash_profile"
+    regexp: "^export NVM_DIR=\"$HOME/.nvm\""
+    create: yes
+    line: "export NVM_DIR=\"$HOME/.nvm\""
+
+- lineinfile: 
+    path: "~/.bash_profile"
+    regexp: "^[ -s \"/usr/local/opt/nvm/nvm.sh\" ] && . \"/usr/local/opt/nvm/nvm.sh\""
+    create: yes
+    line: "[ -s \"/usr/local/opt/nvm/nvm.sh\" ] && . \"/usr/local/opt/nvm/nvm.sh\""
+
+- name: Check if zsh is installed
+  stat:
+    path: ~/.zshrc
+  register: zsh_installed
+
+- lineinfile: 
+    path: "~/.zshrc"
+    regexp: "^export NVM_DIR=\"$HOME/.nvm\""
+    create: yes
+    line: "export NVM_DIR=\"$HOME/.nvm\""
+  when: zsh_installed.stat.exists == True
+
+- lineinfile: 
+    path: "~/.zshrc"
+    regexp: "^[ -s \"/usr/local/opt/nvm/nvm.sh\" ] && . \"/usr/local/opt/nvm/nvm.sh\""
+    create: yes
+    line: "[ -s \"/usr/local/opt/nvm/nvm.sh\" ] && . \"/usr/local/opt/nvm/nvm.sh\""
+  when: zsh_installed.stat.exists == True

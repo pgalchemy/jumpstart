@@ -1,0 +1,5 @@
+---
+- name: Install Postman through Homebrew
+  homebrew_cask:
+    name: postman
+    install_options: 'appdir=/Applications'

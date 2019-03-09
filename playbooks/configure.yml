@@ -25,8 +25,24 @@
       prompt: "Would you like to install Ruby?"
       default: "yes"
       private: no
+    - name: js_homebrewpackage_elixir_enabled
+      prompt: "Would you like to install Elixir?"
+      default: "yes"
+      private: no
+    - name: js_homebrewpackage_golang_enabled
+      prompt: "Would you like to install Golang?"
+      default: "yes"
+      private: no
     - name: js_homebrewpackage_git_enabled
       prompt: "Would you like to install Git?"
+      default: "yes"
+      private: no
+    - name: js_homebrewpackage_aws_enabled
+      prompt: "Would you like to install AWS?"
+      default: "yes"
+      private: no
+    - name: js_homebrewpackage_terraform_enabled
+      prompt: "Would you like to install Terraform?"
       default: "yes"
       private: no
     - name: js_homebrewpackage_node_enabled
@@ -49,8 +65,32 @@
       prompt: "Would you like to install Visual Studio Code?"
       default: "yes"
       private: no
+    - name: js_homebrewcask_androidstudio_enabled
+      prompt: "Would you like to install Android Studio?"
+      default: "yes"
+      private: no
     - name: js_homebrewcask_slack_enabled
       prompt: "Would you like to install Slack?"
+      default: "yes"
+      private: no
+    - name: js_homebrewcask_spotify_enabled
+      prompt: "Would you like to install Spotify?"
+      default: "yes"
+      private: no
+    - name: js_homebrewcask_postman_enabled
+      prompt: "Would you like to install Postman?"
+      default: "yes"
+      private: no
+    - name: js_homebrewcask_dashlane_enabled
+      prompt: "Would you like to install Dashlane?"
+      default: "yes"
+      private: no
+    - name: js_homebrewcask_notion_enabled
+      prompt: "Would you like to install Notion?"
+      default: "yes"
+      private: no
+    - name: js_homebrewcask_sketch_enabled
+      prompt: "Would you like to install Sketch?"
       default: "yes"
       private: no
     - name: js_homebrewcask_docker_enabled
@@ -81,8 +121,20 @@
         line: "js_homebrewpackage_ruby_enabled: {{ js_homebrewpackage_ruby_enabled|bool }}"
     - lineinfile:
         path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewpackage_elixir_enabled: (?:True|False)$"
+        line: "js_homebrewpackage_elixir_enabled: {{ js_homebrewpackage_elixir_enabled|bool }}"
+    - lineinfile:
+        path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewpackage_golang_enabled: (?:True|False)$"
+        line: "js_homebrewpackage_golang_enabled: {{ js_homebrewpackage_golang_enabled|bool }}"
+    - lineinfile:
+        path: "../global_vars/vars.yml"
         regexp: "^js_homebrewpackage_git_enabled: (?:True|False)$"
         line: "js_homebrewpackage_git_enabled: {{ js_homebrewpackage_git_enabled|bool }}"
+    - lineinfile:
+        path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewpackage_terraform_enabled: (?:True|False)$"
+        line: "js_homebrewpackage_terraform_enabled: {{ js_homebrewpackage_terraform_enabled|bool }}"
     - lineinfile:
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewpackage_node_enabled: (?:True|False)$"
@@ -91,6 +143,10 @@
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_googlechrome_enabled: (?:True|False)$"
         line: "js_homebrewcask_googlechrome_enabled: {{ js_homebrewcask_googlechrome_enabled|bool }}"
+    - lineinfile:
+        path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewcask_androidstudio_enabled: (?:True|False)$"
+        line: "js_homebrewcask_androidstudio_enabled: {{ js_homebrewcask_androidstudio_enabled|bool }}"
     - lineinfile:
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_iterm2_enabled: (?:True|False)$"
@@ -103,6 +159,18 @@
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_slack_enabled: (?:True|False)$"
         line: "js_homebrewcask_slack_enabled: {{ js_homebrewcask_slack_enabled|bool }}"
+    - lineinfile:
+        path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewcask_spotify_enabled: (?:True|False)$"
+        line: "js_homebrewcask_spotify_enabled: {{ js_homebrewcask_spotify_enabled|bool }}"
+    - lineinfile:
+        path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewcask_notion_enabled: (?:True|False)$"
+        line: "js_homebrewcask_notion_enabled: {{ js_homebrewcask_notion_enabled|bool }}"
+    - lineinfile:
+        path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewcask_sketch_enabled: (?:True|False)$"
+        line: "js_homebrewcask_sketch_enabled: {{ js_homebrewcask_sketch_enabled|bool }}"
     - lineinfile:
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_docker_enabled: (?:True|False)$"

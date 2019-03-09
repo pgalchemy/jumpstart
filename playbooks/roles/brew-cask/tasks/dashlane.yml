@@ -1,0 +1,6 @@
+---
+- name: Install Dashlane through Homebrew
+  homebrew_cask:
+    name: dashlane
+    install_options: 'appdir=/Applications'
+  

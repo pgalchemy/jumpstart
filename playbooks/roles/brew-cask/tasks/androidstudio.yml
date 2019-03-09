@@ -1,0 +1,6 @@
+---
+- name: Install Android Studio through Homebrew
+  homebrew_cask:
+    name: android-studio
+    install_options: 'appdir=/Applications'
+  
